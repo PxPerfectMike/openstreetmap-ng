@@ -1,5 +1,5 @@
-.settings-connections-body,
-.admin-user-edit-body {
+.settings_connections\.Page,
+.admin_users\.EditPage {
   img.auth-provider-icon {
     object-fit: contain;
   }
@@ -36,7 +36,7 @@
   }
 }
 
-.settings-connections-body {
+.settings_connections\.Page {
   .table {
     tr:last-child {
       td {
@@ -52,8 +52,8 @@
 }
 
 @include color-mode(dark) {
-  .settings-connections-body,
-  .admin-user-edit-body {
+  .settings_connections\.Page,
+  .admin_users\.EditPage {
     .auth-provider-icon {
       &.bi-github {
         color: #f6f8fa;

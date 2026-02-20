@@ -204,7 +204,7 @@ export const MultiInput = ({
 
       {visibleTokens.map((value) => (
         <input
-          key={`hidden-${value}`}
+          key={value}
           type="hidden"
           name={name}
           value={value}

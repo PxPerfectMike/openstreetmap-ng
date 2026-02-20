@@ -1,6 +1,6 @@
 @use "bootstrap/scss/functions";
 
-.settings-security-body {
+.settings_security\.Page {
   .two-factor-methods > li {
     padding: 1rem 0;
 
@@ -124,8 +124,8 @@
   }
 }
 
-.settings-security-body,
-.admin-user-edit-body {
+.settings_security\.Page,
+.admin_users\.EditPage {
   .passkey-entry {
     margin: 0.5rem 0;
 
@@ -144,8 +144,8 @@
 }
 
 @include color-mode(light) {
-  .settings-security-body,
-  .admin-user-edit-body {
+  .settings_security\.Page,
+  .admin_users\.EditPage {
     .qr-code-container > svg {
       @extend .border;
     }
@@ -157,8 +157,8 @@
 }
 
 @include color-mode(dark) {
-  .settings-security-body,
-  .admin-user-edit-body {
+  .settings_security\.Page,
+  .admin_users\.EditPage {
     .passkey-icon-light {
       display: none;
     }

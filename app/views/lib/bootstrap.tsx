@@ -1,6 +1,39 @@
 import { Alert, Popover, Tooltip } from "bootstrap"
-import type { ComponentChild } from "preact"
+import { type ComponentChild, render } from "preact"
 import { useEffect, useRef } from "preact/hooks"
+
+export const BPopover = ({
+  content,
+  trigger,
+  children,
+}: {
+  content: () => ComponentChild
+  trigger?: Popover.Options["trigger"] | undefined
+  children: ComponentChild
+}) => {
+  const wrapperRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const contentNode = document.createElement("div")
+    render(content(), contentNode)
+
+    const options: Partial<Popover.Options> = {
+      html: true,
+      container: "body",
+      content: () => contentNode,
+    }
+    if (trigger !== undefined) options.trigger = trigger
+
+    const popover = new Popover(wrapperRef.current!, options)
+
+    return () => {
+      popover.dispose()
+      render(null, contentNode)
+    }
+  }, [content, trigger])
+
+  return <span ref={wrapperRef}>{children}</span>
+}
 
 export const BTooltip = ({
   title,

@@ -57,7 +57,7 @@
     "stylelint": "latest",
     "stylelint-config-recess-order": "latest",
     "typed-query-selector": "latest",
-    "unplugin-macros": "latest",
+    "unplugin-macros": "file:vendor/unplugin-macros",
     "vite": "latest"
   },
   "scripts": {
